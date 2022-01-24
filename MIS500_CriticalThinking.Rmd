@@ -1,0 +1,16 @@
+---
+title: "MIS500 Module 2 Critical Thinking Option 1"
+author: "David Edwards"
+date: "1/24/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+housing <- read.csv("housing.csv", header = FALSE)
+head(housing)
+```
+
