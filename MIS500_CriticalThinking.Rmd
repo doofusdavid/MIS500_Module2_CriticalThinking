@@ -11,6 +11,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 housing <- read.csv("housing.csv", header = FALSE)
+colnames(housing)[1] = "CRIM"
+colnames(housing)[2] = "ZN"
+colnames(housing)[3] = "INDUS"
+colnames(housing)[4] = "CHAS"
+colnames(housing)[5] = "NOX"
+colnames(housing)[6] = "RM"
+colnames(housing)[7] = "AGE"
+colnames(housing)[8] = "DIS"
+colnames(housing)[9] = "RAD"
+colnames(housing)[10] = "TAX"
+colnames(housing)[11] = "PTRATIO"
+colnames(housing)[12] = "B"
+colnames(housing)[13] = "LSTAT"
+colnames(housing)[14] = "MEDV"
+
 head(housing)
 ```
 
+```{r}
+summary(housing)
+
+```
