@@ -31,7 +31,9 @@ colnames(housing)[11] = "PTRATIO"
 colnames(housing)[12] = "B"
 colnames(housing)[13] = "LSTAT"
 colnames(housing)[14] = "MEDV"
+```
 
+```{r}
 head(housing)
 ```
 
