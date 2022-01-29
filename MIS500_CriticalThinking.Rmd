@@ -2,6 +2,12 @@
 title: "MIS500 Module 2 Critical Thinking Option 1"
 author: "David Edwards"
 date: "1/24/2022"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+
 output: html_document
 ---
 
@@ -33,3 +39,44 @@ head(housing)
 summary(housing)
 
 ```
+
+
+```{r}
+crime <- cor(housing$CRIM, housing$MEDV)
+paste("Crime to Cost: ",  crime)
+```
+
+```{r}
+rooms <- cor(housing$RM, housing$MEDV)
+paste("Rooms to Cost: ",  rooms)
+```
+
+```{r}
+ptratio <- cor(housing$PTRATIO, housing$MEDV)
+paste("Pupil Teacher ratio to Cost: ",  ptratio)
+```
+
+```{r}
+
+scatter_columns <- housing[, c("MEDV", "CRIM", "RM", "PTRATIO")]
+head(scatter_columns)
+```
+
+```{r}
+pairs(scatter_columns)
+```
+```{r}
+head(scatter_columns)
+```
+
+```{r}
+
+model <- lm(MEDV~CRIM+RM+PTRATIO, data=scatter_columns)
+print(model)
+```
+
+```{r}
+layout(matrix(c(1,2,3,4),2,2))
+plot(model)
+```
+
